@@ -20,6 +20,7 @@ class Controller
 {
 private:
     void findMaxAndMin();
+    void createALinkedList();
 public:
     void start();
 };

@@ -24,6 +24,11 @@ void Controller :: start()
     codeTimer.displayInformation();
 }
 
+void Controller :: createALinkedList()
+{
+    
+}
+
 void Controller :: findMaxAndMin()
 {
     Timer searchTimer;
