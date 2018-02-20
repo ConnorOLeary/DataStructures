@@ -35,7 +35,7 @@ private:
 protected:
     LinearNode<Type> * front;
     LinearNode<Type> * end;
-}
+};
 
 template <class Type>
 LinkedList<Type> :: LinkedList()
@@ -66,13 +66,14 @@ void LinkedList<Type> :: add(Type item)
     }
     else
     {
-        this->->setNextNode(newData);
+        this->setNextNode(newData);
     }
     
     this-> end = newData;
     this->size += 1;
 }
 
+template <class Type>
 void LinkedList<Type> :: addAtIndex(int index, Type item)
 {
     assert(index >= 0 && index <= this->size);

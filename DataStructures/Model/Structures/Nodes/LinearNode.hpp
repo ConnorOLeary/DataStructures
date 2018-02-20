@@ -24,35 +24,35 @@ public:
     
     void setNextNode(LinearNode<Type> * next);
     LinearNode<Type> * getNextNode();
+};
+
+template <class Type>
+LinearNode<Type> :: LinearNode() : Node<Type>()
+{
+    this->next = nullptr;
+}
+
+template<class Type>
+LinearNode<Type> :: LinearNode(Type data) : Node<Type>(data)
+{
+    this->next = nullptr;
 }
 
 template <class Type>
-LinearNode<Type> :: LinearNode(Type data) : Node<Type>(data)
-{
-    this->next = nullptr;
-}
-
-template<class Type>
-LinearNode<Type> :: LinearNode(Type data) : Node<Type>(data)
-{
-    this->next = nullptr;
-}
-
-template<class Type>
-LinearNode<Type :: LinearNode(Type data, LinearNode<Type> * next) : Node<Type>(data)
+LinearNode<Type> :: LinearNode(Type data, LinearNode<Type> * next) : Node<Type>(data)
 {
     this->next = next;
 }
 
 
 template<class Type>
-void LinearNode<Type> :: SetNextNode(LinearNode<Type> * nextNodePointer)
+void LinearNode<Type> :: setNextNode(LinearNode<Type> * nextNodePointer)
 {
     this->next = nextNodePointer;
 }
 
 template <class Type>
-LinearNode<Type> * LienarNode<Type> :: getNextNode()
+LinearNode<Type> * LinearNode<Type> :: getNextNode()
 {
     return next;
 }

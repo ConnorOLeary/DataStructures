@@ -24,7 +24,7 @@ public:
     void setData(Type data);
     Type getData();
     
-}
+};
 template <class Type>
 Node<Type> :: Node(Type data)
 {
