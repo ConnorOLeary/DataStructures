@@ -54,7 +54,7 @@ Array<Type> :: Array(const Array<Type> & toCopy)
     
     internalArray = new Type[size];
     
-    for(int inde = 0; index < size; index++)
+    for(int index = 0; index < size; index++)
     {
         internalArray[index] = toCopy[index]
     }

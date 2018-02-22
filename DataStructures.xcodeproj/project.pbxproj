@@ -46,6 +46,7 @@
 		5B8424912024BA8300E8FC45 /* CrimeData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CrimeData.hpp; sourceTree = "<group>"; };
 		5B8424932024BD1500E8FC45 /* Runner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Runner.cpp; sourceTree = "<group>"; };
 		5B84249B2024C85800E8FC45 /* Array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
+		5BF1F560203F1E5200E16CFC /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +169,7 @@
 				5B0A080C202CB46E007E263E /* List.hpp */,
 				5B84249B2024C85800E8FC45 /* Array.hpp */,
 				5B1CEEC32031F8ED00E962D5 /* LinkedList.hpp */,
+				5BF1F560203F1E5200E16CFC /* Stack.hpp */,
 			);
 			path = Linear;
 			sourceTree = "<group>";

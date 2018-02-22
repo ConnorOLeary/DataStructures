@@ -12,7 +12,9 @@
 #include <stdio.h>
 #include <assert.h>
 #include <iostream>
-#include "List.hpp"
+#include "/Users/cole9798/Documents/Data Structure/DataStructures/DataStructures/Model/Structures/Linear/List.hpp"
+#include "/Users/cole9798/Documents/Data Structure/DataStructures/DataStructures/Model/Structures/Nodes/LinearNode.hpp"
+
 
 using namespace std;
 
@@ -26,10 +28,10 @@ public:
     LinearNode<Type> * getFront();
     LinearNode<Type> * getEnd();
     
-    void add(Type item);
-    void addAtIndex(int index, Type item);
-    Type getFromIndex(int index);
-    Type remove(int index);
+    virtual void add(Type item);
+    virtual void addAtIndex(int index, Type item);
+    virtual Type getFromIndex(int index);
+    virtual Type remove(int index);
 private:
     
 protected:
@@ -66,10 +68,10 @@ void LinkedList<Type> :: add(Type item)
     }
     else
     {
-        this->setNextNode(newData);
+        this->end->setNextNode(newData);
     }
     
-    this-> end = newData;
+    this->end = newData;
     this->size += 1;
 }
 
@@ -105,7 +107,7 @@ void LinkedList<Type> :: addAtIndex(int index, Type item)
     }
 }
 template <class Type>
-LinkedList<Type> :: getFromIndex(int index)
+Type LinkedList<Type> :: getFromIndex(int index)
 {
     assert(index >= 0 && index < this->size);
     Type data;
@@ -161,7 +163,7 @@ Type LinkedList<Type>:: remove(int index)
     
     removedData = toBeRemoved->getData();
     delete toBeRemoved;
-    return removedData
+    return removedData;
 }
 
 template <class Type>
