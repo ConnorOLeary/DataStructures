@@ -22,6 +22,9 @@ void Controller :: start()
     }
     codeTimer.stopTimer();
     codeTimer.displayInformation();
+    
+    RecursionTester test;
+    test.testRecursionNumbers();
 }
 
 void Controller :: createALinkedList()

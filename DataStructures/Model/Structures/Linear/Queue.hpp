@@ -30,7 +30,7 @@ public:
     void addAtIndex(int index, Type data);
     Type getFromIndex(int index);
     Type remove(int index);
-}
+};
 
 template <class Type>
 Queue<Type> :: Queue() : LinkedList<Type>()
@@ -64,6 +64,7 @@ void Queue<Type> :: enqueue(Type item)
     this->end = added;
     this->size++;
 }
+
 template <class Type>
 void Queue<Type> :: addAtIndex(int index, Type item)
 {
@@ -88,8 +89,9 @@ Type Queue<Type> :: dequeue()
     this->front=removed->getNextNode();
     this->size = this->size - 1;
     
-    return returned
+    return returned;
 }
+
 template <class Type>
 Type Queue<Type> :: remove(int index)
 {

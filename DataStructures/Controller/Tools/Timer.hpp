@@ -13,9 +13,6 @@
 #include <assert.h>
 #include <iostream>
 
-#endif /* Timer_hpp */
-
-
 class Timer
 {
 private:
@@ -31,3 +28,5 @@ public:
     long getTimeInMicroseconds();
     
 };
+
+#endif /* Timer_hpp */
