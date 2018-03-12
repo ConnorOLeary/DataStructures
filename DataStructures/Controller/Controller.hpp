@@ -21,6 +21,7 @@ class Controller
 private:
     void findMaxAndMin();
     void createALinkedList();
+    void timerTest();
 public:
     void start();
 };

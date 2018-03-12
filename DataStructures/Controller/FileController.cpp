@@ -42,9 +42,9 @@ vector<CrimeData> FileController :: readCrimeDataToVector(string filename)
 }
 
 
-LinkedList<CrimeData> FileController :: readDataToLIst(string filename){
-    LinkedList<CrimeData> crimes;
+LinkedList<CrimeData> FileController :: readDataToList(string filename){
     
+    LinkedList<CrimeData> crimes;
     string currentCSVLine;
     int rowCount = 0;
     
