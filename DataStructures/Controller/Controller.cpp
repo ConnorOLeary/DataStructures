@@ -11,11 +11,13 @@ using namespace std;
 
 void Controller :: start()
 {
-    findMaxAndMin();
-    timerTest();
+    //SortingTester my;
+    //my.testSorts();
+    //findMaxAndMin();
+    //timerTest();
     
-    RecursionTester test;
-    test.testRecursionNumbers();
+    //RecursionTester test;
+    //test.testRecursionNumbers();
 }
 
 void Controller :: createALinkedList()
