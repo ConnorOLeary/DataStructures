@@ -16,6 +16,7 @@
 		5B8424952024BD1500E8FC45 /* Runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B8424932024BD1500E8FC45 /* Runner.cpp */; };
 		5BBF0B05206004A300609388 /* SortingTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF0B03206004A300609388 /* SortingTester.cpp */; };
 		5BDF5C84204D91A100BB65E3 /* RecursionTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BDF5C82204D91A100BB65E3 /* RecursionTester.cpp */; };
+		5BEF889220653FF000AC1BCB /* GraphTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BEF889020653FF000AC1BCB /* GraphTester.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,8 @@
 		5BBF0B04206004A300609388 /* SortingTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SortingTester.hpp; sourceTree = "<group>"; };
 		5BDF5C82204D91A100BB65E3 /* RecursionTester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RecursionTester.cpp; sourceTree = "<group>"; };
 		5BDF5C83204D91A100BB65E3 /* RecursionTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RecursionTester.hpp; sourceTree = "<group>"; };
+		5BEF889020653FF000AC1BCB /* GraphTester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GraphTester.cpp; sourceTree = "<group>"; };
+		5BEF889120653FF000AC1BCB /* GraphTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GraphTester.hpp; sourceTree = "<group>"; };
 		5BF1F560203F1E5200E16CFC /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		5BF1F563203F224B00E16CFC /* Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +87,8 @@
 				5BDF5C83204D91A100BB65E3 /* RecursionTester.hpp */,
 				5BBF0B03206004A300609388 /* SortingTester.cpp */,
 				5BBF0B04206004A300609388 /* SortingTester.hpp */,
+				5BEF889020653FF000AC1BCB /* GraphTester.cpp */,
+				5BEF889120653FF000AC1BCB /* GraphTester.hpp */,
 			);
 			path = Testers;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				5B8424922024BA8300E8FC45 /* CrimeData.cpp in Sources */,
 				5B8424952024BD1500E8FC45 /* Runner.cpp in Sources */,
 				5B683074204713180090C61A /* TestingStacksAndQueues.cpp in Sources */,
+				5BEF889220653FF000AC1BCB /* GraphTester.cpp in Sources */,
 				5B8424852024B34E00E8FC45 /* FileController.cpp in Sources */,
 				5B244A54203C86AC0039FC6C /* LinkedListTester.cpp in Sources */,
 				5BBF0B05206004A300609388 /* SortingTester.cpp in Sources */,
