@@ -19,6 +19,7 @@ private:
     void setup();
     void compareTraversals();
     void findCheapestTraversal();
+    void findExpensiveTraversal();
 public:
     void testGraphs();
 };

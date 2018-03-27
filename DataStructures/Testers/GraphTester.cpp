@@ -109,14 +109,53 @@ void GraphTester :: setup()
 void GraphTester :: testGraphs()
 {
     setup();
-    compareTraversals();
+    //compareTraversals();
+    findCheapestTraversal();
+    findExpensiveTraversal();
 }
 
 void GraphTester :: compareTraversals()
 {
-    puzzle.depthFirstTraversal(puzzle, 9);
-    puzzle.depthFirstTraversal(puzzle, 12);
-    cout << "SPLIT THIS" << endl;
-    puzzle.breadthFirstTraversal(puzzle, 12);
+    //puzzle.depthFirstTraversal(puzzle, 9);
+    //puzzle.depthFirstTraversal(puzzle, 12);
+    cout << "--------------------------" << endl;
+    //puzzle.breadthFirstTraversal(puzzle, 33);
+    //puzzle.breadthFirstTraversal(puzzle, 2);
+    cout << "--------------------------" << endl;
+    cout << puzzle.costTraversal(puzzle, 2) << endl;
+    //puzzle.breadthFirstTraversal(puzzle, 2);
 }
 
+void GraphTester :: findCheapestTraversal(){
+    int cheapest = puzzle.costTraversal(puzzle, 0);
+    int cheapestIndex = 0;
+    for(int index = 0; index < puzzle.size(); index++){
+        //cout << puzzle.costTraversal(puzzle, index) << endl;
+        if(puzzle.costTraversal(puzzle, index) < cheapest){
+            cheapest = puzzle.costTraversal(puzzle, index);
+            cheapestIndex = index;
+        }
+    }
+    cout << "------------cheapest--------------" << endl;
+    cout << puzzle.costTraversal(puzzle, cheapestIndex) << endl;
+    cout << cheapestIndex << endl;
+    puzzle.breadthFirstTraversal(puzzle, cheapestIndex);
+    
+}
+
+void GraphTester :: findExpensiveTraversal(){
+    int expensive = puzzle.costTraversal(puzzle, 0);
+    int expensiveIndex = 0;
+    for(int index = 0; index < puzzle.size(); index++){
+        //cout << puzzle.costTraversal(puzzle, index) << endl;
+        if(puzzle.costTraversal(puzzle, index) > expensive){
+            expensive = puzzle.costTraversal(puzzle, index);
+            expensiveIndex = index;
+        }
+    }
+    cout << "------------expensive--------------" << endl;
+    cout << puzzle.costTraversal(puzzle, expensiveIndex) << endl;
+    cout << expensiveIndex << endl;
+    puzzle.breadthFirstTraversal(puzzle, expensiveIndex);
+    
+}
