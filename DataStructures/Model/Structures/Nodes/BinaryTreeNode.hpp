@@ -66,3 +66,5 @@ void BinaryTreeNode<Type> :: setLeftNode(BinaryTreeNode<Type> * left)
 {
     this->left = left;
 }
+
+#endif 
