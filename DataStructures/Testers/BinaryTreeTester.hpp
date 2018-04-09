@@ -15,7 +15,7 @@
 class BinaryTreeTrester
 {
 public:
-    void testNodes();
+    BinaryTreeNode<int> testNode;
 };
 
 #endif /* BinaryTreeTester_hpp */
