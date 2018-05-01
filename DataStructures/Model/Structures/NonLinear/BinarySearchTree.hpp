@@ -45,6 +45,7 @@ public:
     void demoTraversalSteps(BinaryTreeNode<Type> * node);
     
     int getSize();
+    int calculateSize(BinaryTreeNode<Type> * currentNode);
     int getHeight();
     bool isComplete();
     bool isBalanced();
@@ -66,11 +67,25 @@ int BinarySearchTree<Type> :: getHeight()
 template <class Type>
 int BinarySearchTree<Type> :: getSize()
 {
-    return -1;
+    int size = 0;
+    
+    size += calculateSize(this->root);
+    
+    return size;
 }
 
 template <class Type>
-bool BinarySearchTree<Type> :: isCoplete()
+int BinarySearchTree<Type> :: calculateSize(BinaryTreeNode<Type> * current)
+{
+    if(current != nullptr)
+    {
+        return calculateSize(current->getLeftNode()) + calculateSize(current->getRightNode()) + 1;
+    }
+    return 0;
+}
+
+template <class Type>
+bool BinarySearchTree<Type> :: isComplete()
 {
     return false;
 }
@@ -84,25 +99,95 @@ bool BinarySearchTree<Type> :: isBalanced()
 template <class Type>
 void BinarySearchTree<Type> :: inOrderTraversal()
 {
-    
+    inOrderTraversal(this->root);
+}
+
+template <class Type>
+void BinarySearchTree<Type> :: inOrderTraversal(BinaryTreeNode<Type> * currentNode)
+{
+    if(currentNode != nullptr)
+    {
+        inOrderTraversal(currentNode->getLeftNode());
+        cout << currentNode->getData() << endl;
+        inOrderTraversal(currentNode->getRightNode());
+    }
 }
 
 template <class Type>
 void BinarySearchTree<Type> :: preOrderTraversal()
 {
-    
+    preOrderTraversal(this->root);
+}
+
+template <class Type>
+void BinarySearchTree<Type> :: preOrderTraversal(BinaryTreeNode<Type> * currentNode)
+{
+    if(currentNode != nullptr)
+    {
+        cout << currentNode ->getData() << endl;
+        preOrderTraversal(currentNode ->getLeftNode());
+        preOrderTraversal(currentNode->getRightNode());
+    }
 }
 
 template <class Type>
 void BinarySearchTree<Type> :: postOrderTraversal()
 {
-    
+    postOrderTraversal(this->root);
 }
 
 template <class Type>
-void BinarySearchTree<Type> :: insert(Type item)
+void BinarySearchTree<Type> :: postOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
+    if(currentNode != nullptr)
+    {
+        postOrderTraversal(currentNode->getLeftNaode());
+        postOrderTraversal(currentNode->getRightNode());
+        cout << currentNode->getData() << endl;
+    }
+}
+
+template <class Type>
+void BinarySearchTree<Type> :: insert(Type itemToInsert)
+{
+    BinaryTreeNode<Type> * insertMe = new BinaryTreeNode<Type>(itemToInsert);
+    BinaryTreeNode<Type> * previous = nullptr;
+    BinaryTreeNode<Type> * current = this->root;
     
+    if(current == nullptr)
+    {
+        this->root = insertMe;
+    }
+    else
+    {
+        while(current !=nullptr)
+        {
+            previous = current;
+            if(itemToInsert < current ->getData())
+            {
+                current = current->getLeftNode();
+            }
+            else if(itemToInsert > current->getData())
+            {
+                current = current->getRightNode();
+            }
+            else
+            {
+                cerr << "Item exists already - Exiting insert" << endl;
+                delete insertMe;
+                return;
+            }
+        }
+        if(previous->getData() > itemToInsert)
+        {
+            previous->setLeftNode(insertMe);
+        }
+        else
+        {
+            previous-> setRightNode(insertMe);
+        }
+        insertMe->setRootNode(previous);
+    }
 }
 
 template <class Type>

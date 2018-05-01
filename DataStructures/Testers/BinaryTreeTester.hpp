@@ -13,9 +13,11 @@
 #include "/Users/cole9798/Documents/Data Structure/DataStructures/DataStructures/Model/Structures/NonLinear/BinarySearchTree.hpp"
 #include <iostream>
 
-class BinaryTreeTrester
+class BinaryTreeTester
 {
 public:
+    void doTreeStuff();
+private:
     BinaryTreeNode<int> testNode;
     BinarySearchTree<int> testTree;
 };
