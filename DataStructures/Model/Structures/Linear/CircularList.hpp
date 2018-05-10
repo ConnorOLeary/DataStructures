@@ -18,6 +18,7 @@ class CircularList : public List<Type>
 private:
     DoubleNode<Type> * front;
     DoubleNode<Type> * end;
+    
     DoubleNode<Type> * findNode(int index);
 public:
     CircularList();
@@ -28,16 +29,17 @@ public:
     Type remove(int index);
     Type getFromIndex(int index);
     int getSize() const;
+    
+    LinearNode<Type>* getFront();
+    LinearNode<Type>* getEnd();
 };
 
 template <class Type>
 CircularList<Type> :: CircularList()
 {
-    front->setPrevious(end);
-    front->setNext(end);
-    
-    end->setPrevious(front);
-    end->setNext(front);
+    front = nullptr;
+    end = nullptr;
+    this->size = 0;
 }
 
 template <class Type>
@@ -152,6 +154,11 @@ Type CircularList<Type> :: remove(int index)
     if(index == 0)
     {
         this->front = removedNext;
+        this->end->setNext(removedNext);
+    }
+    if(index == this->size -1)
+    {
+        this->end = removedPrevious;
         this->front->setPrevious(removedPrevious);
     }
     removedPrevious->setNext(removedNext);
