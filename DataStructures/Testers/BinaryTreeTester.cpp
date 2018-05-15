@@ -21,5 +21,13 @@ void BinaryTreeTester :: doTreeStuff() {
     testTree.insert(9001);
     testTree.insert(101);
     
+    cout << testTree.getHeight() << endl;
+    if(testTree.isBalanced()){
+        cout << "Its balanced" << endl;
+    }
+    
+    if(testTree.isComplete()){
+        cout << "Its complete" << endl;
+    }
     testTree.inOrderTraversal();
 }
