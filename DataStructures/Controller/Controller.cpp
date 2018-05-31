@@ -11,12 +11,14 @@ using namespace std;
 
 void Controller :: start()
 {
-    GraphTester test;
-    test.testGraphs();
+    //GraphTester test;
+    //test.testGraphs();
     //SortingTester my;
     //my.testSorts();
     //findMaxAndMin();
     //timerTest();
+    BinaryTreeTester test;
+    test.doTreeStuff();
     
     //RecursionTester test;
     //test.testRecursionNumbers();

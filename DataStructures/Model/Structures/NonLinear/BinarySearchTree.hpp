@@ -6,39 +6,40 @@
 //  Copyright © 2018 CTEC. All rights reserved.
 //
 
-#ifndef BinarySearchTree_hpp
-#define BinarySearchTree_hpp
+#ifndef BinarySearchTree_h
+#define BinarySearchTree_h
 
-#include <iostream>
 #include "Tree.hpp"
-
+#include <iostream>
 using namespace std;
 
 template <class Type>
 class BinarySearchTree : public Tree<Type>
 {
 protected:
+    
     int calculateSize(BinaryTreeNode<Type> * startNode);
     int calculateHeight(BinaryTreeNode<Type> * startNode);
     bool isBalanced(BinaryTreeNode<Type> * startNode);
-    bool isComplete(BinaryTreeNode<Type> * startNode, int index, int size);
+    bool isComplete(BinaryTreeNode<Type> * startNode, int index , int size);
     
     void inOrderTraversal(BinaryTreeNode<Type> * inStart);
     void preOrderTraversal(BinaryTreeNode<Type> * preStart);
     void postOrderTraversal(BinaryTreeNode<Type> * postStart);
     
-    void destroyTree(BinaryTreeNode<Type> * node);
-    
     BinaryTreeNode<Type> * getRightMostChild(BinaryTreeNode<Type> * current);
     BinaryTreeNode<Type> * getLeftMostChild(BinaryTreeNode<Type> * current);
     
     void removeNode(BinaryTreeNode<Type> * removeMe);
+    void destroyTree(BinaryTreeNode<Type> * node);
     
 public:
+    
     BinarySearchTree();
     ~BinarySearchTree();
     
     BinaryTreeNode<Type> * getRoot();
+    void setRoot(BinaryTreeNode<Type> * root);
     
     void inOrderTraversal();
     void preOrderTraversal();
@@ -50,9 +51,9 @@ public:
     bool isComplete();
     bool isBalanced();
     
-    bool contains(Type itemToFind);
+    bool contains(Type value);
     void insert(Type itemToInsert);
-    void remove(Type getRidOfMe);
+    void remove(Type value);
     
     Type findMinimum();
     Type findMaximum();
@@ -126,7 +127,7 @@ bool BinarySearchTree<Type> :: isComplete()
 {
     int index = 0;
     int size = getSize();
-    return isComplate(this->root, index, size);
+    return isComplete(this->root, index, size);
 }
 
 template<class Type>
@@ -166,8 +167,8 @@ bool BinarySearchTree<Type> :: isBalanced(BinaryTreeNode<Type> * current)
     rightHeight = calculateHeight(current->getLeftNode());
     
     int heightDifference = abs(leftHeight - rightHeight);
-    bool leftBalanced = isBalanced(current->getLEftNode());
-    bool rightBalanced = isBalanced(current->getRightNoe());
+    bool leftBalanced = isBalanced(current->getLeftNode());
+    bool rightBalanced = isBalanced(current->getRightNode());
     
     if(heightDifference <= 1 && leftBalanced && rightBalanced)
     {
@@ -221,7 +222,7 @@ void BinarySearchTree<Type> :: postOrderTraversal(BinaryTreeNode<Type> * current
 {
     if(currentNode != nullptr)
     {
-        postOrderTraversal(currentNode->getLeftNaode());
+        postOrderTraversal(currentNode->getLeftNode());
         postOrderTraversal(currentNode->getRightNode());
         cout << currentNode->getData() << endl;
     }
@@ -415,7 +416,7 @@ void BinarySearchTree<Type> :: removeNode(BinaryTreeNode<Type> * removeMe)
         
         if(previous == nullptr)
         {
-            removeMe->setLeftNode(current->getLEftNOde());
+            removeMe->setLeftNode(current->getLeftNode());
         }
         else
         {

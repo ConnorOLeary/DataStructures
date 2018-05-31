@@ -19,7 +19,8 @@ public:
     void doTreeStuff();
 private:
     BinaryTreeNode<int> testNode;
-    BinarySearchTree<int> testTree;
+    BinarySearchTree<int> testTreeInt;
+    BinarySearchTree<string> testTreeString;
 };
 
 #endif /* BinaryTreeTester_hpp */
